@@ -6,9 +6,15 @@ Requirements
 ## Programming language: PHP or Typescript (Framework: Laravel)
 Database: pick the best for this task (that you would feel comfortable putting on production).
 
+### Developer selection
+As the primary consideration, I have opted to use PHP as the programming language, as it closely aligns with the existing infrastructure and allows me to provide precise development instructions for production. Furthermore, I am comfortable working with both PHP and Typescript, but I believe Laravel would be the most suitable framework for this project. In terms of the database selection, I will choose the best option based on the requirements of the project, and ensure that it is production-ready and reliable.
+
 ## Deliverables
 Deliverable 1. Prepare an Entity Relationship (ER) Diagram for a “Surveys” database.
 Details: Surveys can be short (10 questions) or long (50 or more questions). The surveys database consists of different surveys, the questions that are in these surveys, and their answer options. For this task let’s consider that all surveys are in one language and without question routing (different paths).
+
+![image](docs/er.jpeg)
+
 
 Deliverable 2. Build an API with the necessary endpoints for a survey model. Details: Choose how many endpoints you need to implement this task. The API needs to be able to:
 1) Save respondent answers for one survey with 10 questions. Provide tests for respondent answer saving.
