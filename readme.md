@@ -13,8 +13,9 @@ As the primary consideration, I have opted to use PHP as the programming languag
 Deliverable 1. Prepare an Entity Relationship (ER) Diagram for a “Surveys” database.
 Details: Surveys can be short (10 questions) or long (50 or more questions). The surveys database consists of different surveys, the questions that are in these surveys, and their answer options. For this task let’s consider that all surveys are in one language and without question routing (different paths).
 
+### ER Diagram for Surveys
 ![image](docs/er.jpeg)
-
+This project involves storing data in several tables, with the root table being Surveys that holds information on the survey and its status. The Questions table contains data on the questions and their order of appearance, while the Answers table stores possible answer options. Responses table captures the information or answers provided. Currently, there is no specified requirement to store user information, and hence, a string identifier is used in the 'respondent_ident' field, without creating an internal table for users. Similarly, it is not clear if this API service connects directly to the frontend or whether any user authentication or session storage is needed, and as such, no user operations have been implemented.
 
 Deliverable 2. Build an API with the necessary endpoints for a survey model. Details: Choose how many endpoints you need to implement this task. The API needs to be able to:
 1) Save respondent answers for one survey with 10 questions. Provide tests for respondent answer saving.
