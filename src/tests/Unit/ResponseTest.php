@@ -31,5 +31,4 @@ class ResponseTest extends TestCase
             $this->assertEquals($survey->id, $response->survey()->get()[0]->id);
             $this->assertEquals($question->id, $response->question()->get()[0]->id);
         }
-
 }
