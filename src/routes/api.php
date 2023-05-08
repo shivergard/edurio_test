@@ -18,6 +18,9 @@ use App\Http\Controllers\Api\ResponsesController;
 |
 */
 
+Route::get('/api/documentation', function () {
+    return view('swagger');
+});
 
 //Surveys
 Route::middleware('auth:sanctum')->group(function () {
