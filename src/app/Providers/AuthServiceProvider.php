@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Sanctum\Sanctum;
+use App\Helper\AuthTokens;
+use Auth;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Sanctum::usePersonalAccessTokenModel(AuthTokens::class);
+
+        Auth::viaRequest('sanctum', function ($request) {
+            return AuthTokens::checkToken($request->bearerToken());
+        });
     }
 }

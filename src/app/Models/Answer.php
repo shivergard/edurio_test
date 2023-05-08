@@ -20,4 +20,19 @@ class Answer extends Model
     {
         return $this->hasMany(Response::class);
     }
+
+    public function update(array $attributes = [], array $options = [] ){
+        if ($this->responses()->count() > 0){
+            throw Exception("Can not alter used answer");
+        }
+
+        return parent::update($attributes, $options);
+    }
+
+    public function delete(){
+        if ($this->responses()->count() > 0){
+            throw Exception("Can not delete used answer");
+        }
+        return parent::delete();
+    }
 }

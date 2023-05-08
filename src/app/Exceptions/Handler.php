@@ -3,6 +3,9 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +53,25 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof AuthorizationException) {
+            //$this->print_call_stack();
+            return new JsonResponse([
+                'error' => 'Unauthorized action.',
+                'message'=> $exception->getMessage()
+            ], Response::HTTP_FORBIDDEN);
+        }
+    
         return parent::render($request, $exception);
+    }
+
+    function print_call_stack() {
+        $trace = debug_backtrace();
+        $output = '';
+        foreach ($trace as $call) {
+            if (isset($call['class']) && isset($call['function'])) {
+                $output .= $call['class'] . '::' . $call['function'] . '()<br/>';
+            }
+        }
+        echo $output;
     }
 }

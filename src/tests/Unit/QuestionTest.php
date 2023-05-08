@@ -76,4 +76,8 @@ class QuestionTest extends TestCase
         $this->assertEquals(0, $questionResponse->count());
     }
 
+    // can not delete question if has responses
+    // can not update question if has responses
+    // isActive test
+
 }

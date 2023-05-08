@@ -22,7 +22,19 @@ class Survey extends Model
         return $this->hasMany(Response::class);
     }
 
-    public static function active(){
+    public static function active()
+    {
         return self::where('status', 1);
+    }
+
+    public function isActive()
+    {
+        return $this->status === 1;
+    }
+
+    public function delete(){
+        $this->update([
+            'status' => 0
+        ]);
     }
 }

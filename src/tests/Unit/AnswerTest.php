@@ -78,4 +78,7 @@ class AnswerTest extends TestCase
             $answerResponse = Answer::where('id', $answerId);
             $this->assertEquals(0, $answerResponse->count());
         }
+
+        //can not delete if has responses
+        //can not update if has responses
 }

@@ -114,4 +114,10 @@ return [
 
     'password_timeout' => 10800,
 
+    'credentials' => [
+        'tokens' => [
+            'admin' => env('ADMIN_TOKEN', 'null')
+        ]
+    ]
+
 ];
