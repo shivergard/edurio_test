@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class Question extends Model
 {
@@ -31,7 +31,7 @@ class Question extends Model
 
     public function update(array $attributes = [], array $options = [] ){
         if ($this->responses()->count() > 0){
-            throw Exception("Can not alter ongoing question");
+            throw new AuthorizationException("Can not alter ongoing question");
         }
 
         return parent::update($attributes, $options);
@@ -39,7 +39,7 @@ class Question extends Model
 
     public function delete(){
         if ($this->responses()->count() > 0){
-            throw Exception("Can not delete ongoing question");
+            throw new AuthorizationException("Can not delete ongoing question");
         }
         return parent::delete();
     }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class Answer extends Model
 {
@@ -23,7 +24,7 @@ class Answer extends Model
 
     public function update(array $attributes = [], array $options = [] ){
         if ($this->responses()->count() > 0){
-            throw Exception("Can not alter used answer");
+            throw new AuthorizationException("Can not alter used answer");
         }
 
         return parent::update($attributes, $options);
@@ -31,7 +32,7 @@ class Answer extends Model
 
     public function delete(){
         if ($this->responses()->count() > 0){
-            throw Exception("Can not delete used answer");
+            throw new AuthorizationException("Can not delete used answer");
         }
         return parent::delete();
     }
