@@ -52,4 +52,5 @@ Answer option. An answer option in this context is one of the several options fo
 Project is not provided Production ready. Still lack of test coverage for Questions , Answers and Responses controllers. Missing functionality for Response storage and Agregation. 
 
 # Setup notes
-Install (https://www.docker.com/)[Docker]. Copy .env.examples to .env , update details , note that database credentials are mentioned in 2 seperated places , for Laravel and MariaDB configurations. Run 'docker compose up -d', after that 'docker exec -it laravel-app bash', from where 'composer install' , 'php artisan migrate'. To run tests : './vendor/phpunit/phpunit/phpunit tests'. Preview Swagger Documentation you can in link "http://localhost:{SELECTED_PORT}/api/documentation" - please note that documentation is not fully covered.
+Install [Docker](https://www.docker.com/). Copy .env.examples to .env , update details , note that database credentials are mentioned in 2 seperated places , for Laravel and MariaDB configurations. Run ```docker compose up -d```, after that ```docker exec -it laravel-app bash```, from where ```composer install``` , ```php artisan migrate```. To run tests : ```./vendor/phpunit/phpunit/phpunit tests```. Preview Swagger Documentation you can in link "http://localhost:{SELECTED_PORT}/api/documentation" - please note that documentation is not fully covered.
+
