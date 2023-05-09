@@ -47,3 +47,9 @@ Definitions
 Survey. A survey is a set of questions that respondents can answer. There are many surveys on Edurio, they have a different number of questions. Let's consider for this task that all surveys are in one language without any question routing (different paths, based on the respondent’s previous answers) and all surveys are fully completed (answers to all questions are submitted).
 Question. A question in this context includes the question text, a question type and answer. options (if applicable). Let’s consider for this task there are only 2 question types – multiple-choice questions (with several answer options from which the respondent can only choose one) and open-answer questions (with no answer options where respondents can type in their text response in a text field).
 Answer option. An answer option in this context is one of the several options for the question that the respondent can select. There are no right or wrong answer options to surveys. Let’s consider for this task that all answer options are on a Likert scale (from negative to positive or in numbers from 0 to X - the number of responses).
+
+## Deliverable 2 implementation
+Project is not provided Production ready. Still lack of test coverage for Questions , Answers and Responses controllers. Missing functionality for Response storage and Agregation. 
+
+# Setup notes
+Install (https://www.docker.com/)[Docker]. Copy .env.examples to .env , update details , note that database credentials are mentioned in 2 seperated places , for Laravel and MariaDB configurations. Run 'docker compose up -d', after that 'docker exec -it laravel-app bash', from where 'composer install' , 'php artisan migrate'. To run tests : './vendor/phpunit/phpunit/phpunit tests'. Preview Swagger Documentation you can in link "http://localhost:{SELECTED_PORT}/api/documentation" - please note that documentation is not fully covered.
