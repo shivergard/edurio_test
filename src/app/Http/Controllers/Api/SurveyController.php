@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Survey;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateSurveyRequest;
+use App\Http\Requests\UpdateSurveyRequest;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 
@@ -148,8 +149,12 @@ class SurveyController extends Controller
      * @param  \App\Models\Survey  $survey
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Survey $survey)
+    public function update(UpdateSurveyRequest $request, Survey $survey)
     {
+        $validatedData = $request->validated();
+        if (!is_array($validatedData) && $validatedData->fails()) {
+            return response()->json(['errors' => $validatedData->errors()], 422);
+        }
         $survey->update($request->all());
 
         return response()->json($survey);
