@@ -11,6 +11,7 @@ class Response extends Model
         'survey_id',
         'question_id',
         'respondent_ident',
+        'answer_id',
         'answer',
     ];
 

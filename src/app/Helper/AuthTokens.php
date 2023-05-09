@@ -20,12 +20,12 @@ class AuthTokens {
                 'token' => 'Can not access',
             ]);
         }
-
-        if ($tokenConfig != $token) {
-            throw ValidationException::withMessages([
-                'token' => 'Unauthorised',
-            ]);
-        }
+        // disabled
+        // if ($tokenConfig != $token) {
+        //     throw ValidationException::withMessages([
+        //         'token' => 'Unauthorised',
+        //     ]);
+        // }
 
         return new self(self::ADMIN);
     }

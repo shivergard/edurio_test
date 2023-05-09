@@ -4,6 +4,7 @@ namespace App\Helper;
 
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
+use BlankAuthenticatable;
 
 class BlankUserProvider implements UserProvider
 {
