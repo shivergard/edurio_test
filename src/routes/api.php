@@ -56,7 +56,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // no delete of responses
     // Route::delete('/question/{question}/answer/{answer}', [AnswersController::class, 'delete']);
     Route::get('/question/{question}/responses', [ResponsesController::class, 'index']);
-    Route::get('/question/{question}/response/{answer}', [ResponsesController::class, 'show']);
+    //Route::get('/question/{question}/response/{answer}', [ResponsesController::class, 'show']);
 });
 
 Route::post('/question/{question}/response', [ResponsesController::class, 'store']);

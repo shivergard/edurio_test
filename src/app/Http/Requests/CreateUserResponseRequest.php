@@ -4,6 +4,20 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @OA\Schema(
+ *     schema="CreateUserResponseRequest",
+ *     type="object",
+ *     title="Create User Response Request",
+ *     properties={
+ *         @OA\Property(property="respondent_ident", type="string"),
+ *         @OA\Property(property="answer", type="string"),
+ *     },
+ *     required={"respondent_ident", "answer"},
+ * )
+ */
+
+
 class CreateUserResponseRequest extends FormRequest
 {
     /**

@@ -6,16 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @OA\Schema(
- *     schema="Question",
+ *     schema="Response",
  *     type="object",
- *     title="Question",
+ *     title="Response",
  *     properties={
  *         @OA\Property(property="id", type="integer", format="int64"),
+ *         @OA\Property(property="question_id", type="integer", format="int64"),
  *         @OA\Property(property="survey_id", type="integer", format="int64"),
- *         @OA\Property(property="text", type="string"),
- *         @OA\Property(property="type", type="integer"),
+ *         @OA\Property(property="respondent_ident", type="string"),
+ *         @OA\Property(property="answer", type="string"),
+ *         @OA\Property(property="created_at", type="string", format="date-time"),
+ *         @OA\Property(property="updated_at", type="string", format="date-time"),
  *     },
- *     required={"survey_id", "text", "type"},
+ *     required={"question_id", "survey_id", "respondent_ident", "answer"},
  * )
  */
 
